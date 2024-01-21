@@ -48,6 +48,8 @@ header a {
     border: none;
     background-color: #fff;
     outline: none;
+    display: none;
+    /* NEW CHG MENU */
 }
 
 .toggle-btn:hover {
@@ -78,8 +80,9 @@ header nav {
     max-height: 12.5rem;
 }
 
-ul .menu {
+ul.menu {
     padding-bottom: 1rem;
+    display: none; /*THIS IMPORTANT, NEW MENU */
 }
 
 .gallery {
