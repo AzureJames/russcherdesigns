@@ -1,0 +1,194 @@
+body {
+    background-color: black;
+    font-family: sans-serif;
+}
+
+.flex-container {
+    display: flex;
+    justify-content: space-between;
+}
+
+h1, h2, h3, span, p {
+    font-family: 'Raleway', sans-serif;
+}
+
+h1, h2, h3 {
+    font-weight: 100;
+}
+
+span, p {
+    font-weight: 300;
+}
+
+a {
+    font-weight: 200;
+}
+
+/* *************** header & nav ****************** */
+/* Step: 1 Style the default/showing state. Starting with the mobile view, style the layout and links for how they will look when visible */
+header {
+    background-color: #fff;
+    padding: 2%;
+}
+
+header a {
+    color: #3f3f3f;
+    text-decoration: none;
+    /* allows the clickable area to take up the full width and height of the li */
+    display: block;
+}
+
+.menu a:hover,
+.menu a:active {
+    background-color: gainsboro;
+    border-radius: 4px;
+}
+
+.toggle-btn {
+    border: none;
+    background-color: #fff;
+    outline: none;
+}
+
+.toggle-btn:hover {
+    cursor: pointer;
+}
+
+svg rect {
+    fill: #3f3f3f;
+}
+
+.menu li {
+    /* the extra space from the additional line height, makes this a larger area and vertically centers the text */
+    line-height: 40px;
+    text-align: center;
+}
+/*
+ Step 2: Now let's hide the menu. Once it's hidden this is the default load stage. If using display: none; - that property cannot be transitioned. 
+*/
+header nav {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.7s ease-in-out;
+}
+/*
+ Step 3: Create a special class that will show the menu. This class name exists only in the CSS file for now. Next the javascript will add this class to the nav element for us. Let's go and do that in the main.js file 
+*/
+ .show-nav {
+    max-height: 12.5rem;
+}
+
+ul .menu {
+    padding-bottom: 1rem;
+}
+
+.gallery {
+    display: flex;
+    flex-flow: wrap;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.gallery img {
+    margin-bottom: 1rem;
+    max-width: 500px;
+}
+
+span {
+    background-color: thistle;
+    font-weight: bold;
+}
+
+/* THIS IS FOR ThE OVERLAY ONE
+header nav {
+    position: absolute;
+    top: 69px;
+    background-color: tan;
+    width: 100vw;
+    max-height: 0;
+    overflow:hidden;
+    transition: max-height 0.5s ease-in-out;
+}
+
+.show-nav {
+    max-height: 18.75rem;
+} OVR
+*/
+
+/* ************************* section ****************** */
+section {
+    padding: 3.125rem;
+    text-align: center;
+    width: fit-content;
+
+}
+
+section p {
+    color: #d5e294;
+    padding-bottom: 10px;
+    margin-bottom: 10px;
+    font-size: 1.2rem;
+    max-width: 60rem;
+    margin-inline: auto;
+}
+
+.divider {
+    border-bottom: 2px solid #d5e294;
+}
+
+section h1 {
+    color: #fff;
+    font-size: 3.157rem;
+    margin-bottom: 2rem;
+    text-transform: uppercase;
+}
+
+.italic {
+    font-style: italic;
+    color: whitesmoke;
+}
+
+section {
+    width: 100%
+}
+
+section h2 {
+    color: #fff;
+    font-size: 3.157rem;
+    margin-bottom: 2rem;
+    text-transform: uppercase;
+}
+
+/* Step 4: add a media query and show the nav by default (hide the toggle button) and style it as a horizontal nav */
+
+@media only screen and (min-width: 37.5em) {
+    .toggle-btn {
+        display: none;
+    }
+
+    /* we want to see the nav by default, so give it a height back */
+    header nav  {
+        max-height: 12.5rem;
+        overflow: visible;
+    }
+
+    .menu,
+    header {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .menu li {
+        margin-left: 0.5rem;
+    }
+
+    .menu li a {
+        padding: 0 0.5rem;
+    }
+}
+
+@media screen and (min-width: 768px) {
+    .bio-container {
+        display: flex;
+    }
+}
